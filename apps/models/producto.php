@@ -1,19 +1,24 @@
 <?php
+
 require_once __DIR__ . '/../../config/Database.php';
 
 class Producto {
+
     private $connection;
 
     public function __construct() {
+
         $database = new Database();
+
         $this->connection = $database->connect();
     }
 
     public function getAll() {
+
         $sql = "SELECT * FROM producto";
+
         $consulta = $this->connection->query($sql);
-        
-        // Retorna todos los registros como un arreglo asociativo
+
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
 }

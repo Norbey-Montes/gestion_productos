@@ -1,6 +1,7 @@
 <?php
 
-class Database{
+class Database {
+
     private $host;
     private $port;
     private $dbname;
@@ -8,8 +9,10 @@ class Database{
     private $password;
     private $connection;
 
-    public function __construct(){
-        $env = parse_ini_file(__DIR__.'/../.env');
+    public function __construct() {
+
+        $env = parse_ini_file(__DIR__ . '/../.env');
+
         $this->host = $env['DB_HOST'];
         $this->port = $env['DB_PORT'];
         $this->dbname = $env['DB_NAME'];
@@ -17,9 +20,16 @@ class Database{
         $this->password = $env['DB_PASSWORD'];
     }
 
-    public function connect(){
+    public function connect() {
+
         $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->dbname}";
-        $this->connection = new PDO($dsn, $this->user, $this->password);
-        return $this->connection; // <--- Agregado para que retorne el objeto PDO
+
+        $this->connection = new PDO(
+            $dsn,
+            $this->user,
+            $this->password
+        );
+
+        return $this->connection;
     }
 }
