@@ -1,3 +1,4 @@
+<!-- 1. Tabla general con foreach -->
 <h1>Listado Productos</h1>
 
 <table border="1">
@@ -20,6 +21,7 @@
 </table>
 
 <br><br>
+
 
 <h1>Producto Consultado</h1>
 
