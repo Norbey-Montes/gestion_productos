@@ -7,6 +7,7 @@
         <th>Nombre</th>
         <th>Precio</th>
         <th>Categoria</th>
+        <th>Descripcion</th>
         <th>Proveedor</th>
     </tr>
     <?php foreach ($productos as $product): ?>
@@ -15,6 +16,7 @@
         <td><?= $product['nombre'] ?></td>
         <td><?= $product['precio'] ?></td>
         <td><?= $product['categoria'] ?></td>
+        <td><?= $product['descripcion'] ?></td>
         <td><?= $product['proveedor_nombre'] ?></td>
     </tr>
     <?php endforeach; ?>
@@ -22,8 +24,8 @@
 
 <br><br>
 
-
 <h1>Producto Consultado</h1>
+
 
 <table border="1">
     <tr>
@@ -33,11 +35,14 @@
         <th>Categoria</th>
         <th>Proveedor</th>
     </tr>
+    <?php foreach ($productoConsultado as $product): ?>
     <tr>
-        <td><?= $productoConsultado['id'] ?></td>
-        <td><?= $productoConsultado['nombre'] ?></td>
-        <td><?= $productoConsultado['precio'] ?></td>
-        <td><?= $productoConsultado['categoria'] ?></td>
-        <td><?= $productoConsultado['proveedor_nombre'] ?></td>
+        <td><?= $product['id'] ?></td>
+        <td><?= $product['nombre'] ?></td>
+        <td><?= $product['precio'] ?></td>
+        <td><?= $product['categoria'] ?></td>
+        <td><?= $product['id_proveedor'] ?></td>
+
     </tr>
+    <?php endforeach; ?>
 </table>

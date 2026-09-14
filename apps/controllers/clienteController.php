@@ -7,7 +7,6 @@ class ClienteController {
         $clienteModel = new Cliente();
         $clientes = $clienteModel->getAll();
 
-        // RUTA ACTUALIZADA
         require_once __DIR__ . '/../views/clientes/index.php';
     }
 }
